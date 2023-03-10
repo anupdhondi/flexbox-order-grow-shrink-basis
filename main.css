@@ -20,8 +20,8 @@ body {
   border: 5px solid black;
   height: 1300px;
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  flex-direction: row;
+  flex-wrap: nowrap;
   /*flex-flow: row wrap;*/
   align-items: center;
   justify-content: flex-start;
@@ -34,10 +34,6 @@ body {
   padding: 10px;
   border: 5px solid black;
   margin: 10px;
-  /* default order for all flex items will be 0. The number with highest order will be positioned at the end 
-  of the axis and number with lower order will be positioned at start of the axis.
-  Order accepts both -ve, 0 and +ve values */
-  order: -2;
 }
 
 .item-2 {
@@ -46,9 +42,8 @@ body {
   padding: 10px;
   border: 5px solid black;
   margin: 10px;
-  width: 250px;
+  width: 75px;
   font-size: 1.8rem;
-  order: 2;
 }
 
 .item-3 {
@@ -57,7 +52,7 @@ body {
   padding: 10px;
   border: 5px solid black;
   margin: 10px;
-  height: 250px;
+  height: 100px;
 }
 
 .item-4 {
@@ -66,9 +61,8 @@ body {
   padding: 10px;
   border: 5px solid black;
   margin: 10px;
-  width: 300px;
+  width: 120px;
   height: 300px;
-  order: -1;
 }
 
 .item-5 {
@@ -78,7 +72,11 @@ body {
   border: 5px solid black;
   margin: 10px;
   width: 150px;
+  flex-grow: 1;
 }
+
+/* when you resize to increase window size, out of remaining more space, 
+item-5 will take 1\5th of more space and item-6 will take 4/5th of more space.*/
 
 .item-6 {
   background: #d3c0b1;
@@ -87,4 +85,5 @@ body {
   border: 5px solid black;
   margin: 10px;
   width: 150px;
+  flex-grow: 4;
 }
